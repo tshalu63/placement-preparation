@@ -1,0 +1,273 @@
+# Day 01 – Java Runtime Architecture & Execution Model (Elaborated Interview + Learning Guide)
+
+---
+
+## 1. JDK, JRE, JVM – Deep Explanation
+
+### JDK (Java Development Kit)
+
+JDK is a complete development environment for Java.
+It contains:
+
+* Compiler (javac)
+* Debugger
+* Development tools
+* JRE
+
+Purpose: Used to **write, compile, debug, and develop** Java applications.
+
+### JRE (Java Runtime Environment)
+
+JRE is the execution environment.
+It contains:
+
+* JVM
+* Core libraries
+* Runtime class libraries
+
+Purpose: Used to **run Java applications**, not develop them.
+
+### JVM (Java Virtual Machine)
+
+JVM is a virtual execution engine.
+It:
+
+* Loads bytecode
+* Verifies bytecode
+* Manages memory
+* Executes instructions
+* Handles garbage collection
+
+Purpose: Converts platform-independent bytecode into platform-dependent machine code.
+
+---
+
+## 2. Java Execution Flow (Internal Pipeline)
+
+Flow:
+.java source file → javac compiler → .class file (bytecode) → ClassLoader → Bytecode Verifier → JVM Execution Engine → Machine Code
+
+### Explanation:
+
+* javac converts source code into bytecode
+* Bytecode is platform-independent
+* JVM reads bytecode and executes it
+* JIT converts frequently used code into native machine code
+
+---
+
+## 3. Bytecode – Deep Concept
+
+Bytecode is:
+
+* Intermediate representation of Java code
+* Platform-independent
+* Optimized for JVM execution
+
+Why important:
+
+* Enables portability
+* Enables security
+* Enables JVM optimization
+* Enables cross-platform execution
+
+---
+
+## 4. ClassLoader System (Detailed)
+
+### Bootstrap ClassLoader
+
+Loads core Java classes (java.lang, java.util, etc.)
+
+### Extension ClassLoader
+
+Loads extension libraries
+
+### Application ClassLoader
+
+Loads application-level classes
+
+Process:
+Loading → Linking → Initialization
+
+---
+
+## 5. JVM Memory Architecture (Detailed)
+
+### Heap Memory
+
+Stores:
+
+* Objects
+* Arrays
+* Instance variables
+  Shared across threads
+
+### Stack Memory
+
+Stores:
+
+* Method calls
+* Local variables
+* References
+  Thread-specific
+
+### Method Area (Metaspace)
+
+Stores:
+
+* Class metadata
+* Static variables
+* Method bytecode
+* Constant pool
+
+### PC Register
+
+Stores current executing instruction address
+
+### Native Method Stack
+
+Stores native method execution
+
+---
+
+## 6. Stack vs Heap (Deep Difference)
+
+Stack:
+
+* Thread-based
+* Faster
+* Stores references
+* Method execution
+* Auto deallocation
+
+Heap:
+
+* Shared memory
+* Slower
+* Stores objects
+* Garbage collected
+
+---
+
+## 7. Garbage Collection (GC)
+
+GC automatically:
+
+* Tracks unused objects
+* Frees heap memory
+* Prevents memory leaks
+
+Types of GC:
+
+* Minor GC
+* Major GC
+* Full GC
+
+---
+
+## 8. JIT Compiler (Just-In-Time)
+
+JIT:
+
+* Converts bytecode to native code
+* Improves performance
+* Optimizes hot code paths
+
+Why JIT is needed:
+Interpreter is slow
+JIT improves execution speed
+
+---
+
+## 9. Platform Independence
+
+Java is platform-independent because:
+
+* Compilation produces bytecode
+* JVM is platform-specific
+* Bytecode runs on JVM
+
+"Write Once, Run Anywhere"
+
+---
+
+## 10. JVM vs OS
+
+JVM:
+
+* Software layer
+* Runs inside OS
+* Manages Java execution
+
+OS:
+
+* Hardware controller
+* Manages CPU, memory, IO
+
+Relation:
+Java → JVM → OS → Hardware
+
+---
+
+## 11. Interpreter vs JIT
+
+Interpreter:
+
+* Executes line-by-line
+* Slower
+
+JIT:
+
+* Compiles to native code
+* Faster
+* Optimized execution
+
+---
+
+## 12. Java Execution Lifecycle
+
+Class loading → Memory allocation → Object creation → main() execution → Method calls → GC → Program termination
+
+---
+
+## 13. Real Interview-Level Questions
+
+* How JVM manages memory internally?
+* How GC identifies unused objects?
+* How JIT improves performance?
+* How class loading works internally?
+* How bytecode verification ensures security?
+* How Java handles memory leaks?
+* Why Java is secure?
+* Why Java is portable?
+
+---
+
+## 14. Programming-Oriented Thinking
+
+System mapping:
+
+Class → Memory structure
+Object → Heap allocation
+Method → Stack frame
+Reference → Pointer mapping
+Execution → Thread scheduling
+
+---
+
+## 15. Conceptual Model
+
+Java Program =
+Code + Memory + Execution Engine + Runtime System + OS Interaction
+
+---
+
+This Day 01 content is structured for:
+✔ Interview preparation
+✔ Core understanding
+✔ System design thinking
+✔ Runtime architecture clarity
+✔ JVM internals
+✔ Execution model
+✔ Low-level mapping
