@@ -1,0 +1,369 @@
+Date: Day 2
+Topic: OOPS + Object Design + Core Programming Concepts (Elaborated)
+
+===============================
+OOPS CORE TOPICS
+===============================
+
+1) What is Encapsulation?
+Encapsulation means binding data (variables) and methods (functions) into a single unit (class) and restricting direct access to data using access modifiers (private, protected, public).
+It is implemented using:
+- private variables
+- public getter/setter methods
+
+Purpose:
+- Data security
+- Data hiding
+- Controlled access
+- Better maintainability
+
+Example:
+Private balance variable in BankAccount class accessed only via methods.
+
+--------------------------------
+
+2) What is Abstraction?
+Abstraction means hiding internal implementation and showing only required functionality to the user.
+It focuses on "what to do" not "how to do".
+
+Implemented using:
+- Abstract classes
+- Interfaces
+
+Purpose:
+- Reduce complexity
+- Increase security
+- Improve scalability
+- Better system design
+
+Example:
+User uses ATM machine without knowing internal processing.
+
+--------------------------------
+
+3) What is Inheritance?
+Inheritance allows one class (child) to acquire properties and methods of another class (parent).
+Implemented using `extends` keyword.
+
+Purpose:
+- Code reusability
+- Hierarchical classification
+- Reduced redundancy
+
+Example:
+Vehicle → Car → ElectricCar
+
+--------------------------------
+
+4) What is Polymorphism?
+Polymorphism means one object behaving in multiple forms.
+Same method name, different behavior.
+
+Types:
+- Compile-time polymorphism → Method overloading
+- Runtime polymorphism → Method overriding
+
+Purpose:
+- Flexibility
+- Scalability
+- Dynamic behavior
+
+Example:
+Shape class → draw() method  
+Circle.draw(), Square.draw(), Triangle.draw()
+
+--------------------------------
+
+5) Composition vs Inheritance?
+
+Inheritance (IS-A):
+- Strong coupling
+- Tight dependency
+- Rigid structure
+
+Composition (HAS-A):
+- Loose coupling
+- Flexible design
+- Better scalability
+
+Example:
+Car HAS-A Engine → Composition  
+Car IS-A Vehicle → Inheritance  
+
+Composition is preferred in real systems because it allows change without breaking structure.
+
+--------------------------------
+
+6) Association vs Aggregation vs Composition?
+
+Association:
+General relationship between objects.
+Example: Student — Teacher
+
+Aggregation:
+Weak ownership relationship.
+Child can exist without parent.
+Example: Department — Professor
+
+Composition:
+Strong ownership.
+Child cannot exist without parent.
+Example: House — Room
+
+===============================
+INTERFACE & ABSTRACT CLASS
+===============================
+
+7) Interface:
+Interface is a blueprint of class.
+It supports multiple inheritance.
+All methods are public and abstract by default.
+Variables are public static final.
+
+Used for:
+- Loose coupling
+- Multiple inheritance
+- Contract-based design
+- Framework architecture
+
+--------------------------------
+
+8) Abstract Class:
+Can contain both abstract and concrete methods.
+Supports constructors.
+Provides partial abstraction.
+
+Used when:
+Some functionality is common
+Some must be implemented by child class
+
+--------------------------------
+
+9) Interface vs Abstract Class (Elaborated)
+
+Interface:
+- Multiple inheritance supported
+- No constructors
+- Full abstraction
+- Used for capability definition
+
+Abstract Class:
+- Single inheritance
+- Has constructors
+- Partial abstraction
+- Used for base class design
+
+===============================
+DESIGN-LEVEL CONCEPTS
+===============================
+
+10) Why composition is preferred over inheritance?
+Because it provides:
+- Loose coupling
+- Better maintainability
+- Flexible architecture
+- Easy modification
+- Independent object lifecycle
+
+--------------------------------
+
+11) How does Java support loose coupling?
+- Interfaces
+- Dependency Injection
+- Abstraction
+- Factory patterns
+- Service layers
+
+--------------------------------
+
+12) What is Dependency Injection?
+It means providing dependencies from outside instead of creating them inside the class.
+
+Benefits:
+- Testability
+- Loose coupling
+- Scalability
+- Flexibility
+- Better architecture
+
+===============================
+REAL SYSTEM THINKING
+===============================
+
+13) How OOPS is used in real applications?
+Classes → Real entities  
+Objects → Real instances  
+Methods → Real operations  
+Relationships → System structure  
+
+Example:
+User, Order, Payment, Product as classes in e-commerce system.
+
+--------------------------------
+
+14) How data security is achieved using OOPS?
+- Encapsulation → data hiding
+- Access modifiers → controlled access
+- Abstraction → hide internal logic
+- Immutability → secure objects
+
+===============================
+PROGRAMMING LOGIC (EXPLAINED)
+===============================
+
+15) Employee system using inheritance:
+Base class → Employee  
+Child classes → Manager, Developer, HR  
+Common fields in Employee  
+Special behavior in child classes
+
+--------------------------------
+
+16) Student Management System:
+Classes:
+Student, Course, Teacher, Department, Result  
+Relationships:
+Student HAS-A Course  
+Student ASSOCIATED WITH Teacher
+
+--------------------------------
+
+17) BankAccount using encapsulation:
+Private variables: balance, accountNo  
+Public methods: deposit(), withdraw(), getBalance()
+
+--------------------------------
+
+18) Library System Design:
+Classes:
+Book, Member, Librarian, Library, Transaction
+
+--------------------------------
+
+19) Polymorphism example:
+Shape → draw()  
+Circle.draw(), Square.draw()  
+Dynamic binding at runtime
+
+--------------------------------
+
+20) Login system using abstraction:
+Abstract class AuthSystem  
+Methods: login(), logout()  
+Implementations: UserAuth, AdminAuth
+
+===============================
+INTERVIEW QUESTIONS (ELABORATED)
+===============================
+
+21) Why Java doesn’t support multiple inheritance with classes?
+Because of Diamond Problem (ambiguity in method resolution).
+
+--------------------------------
+
+22) How Java supports multiple inheritance?
+Using interfaces (multiple interfaces can be implemented).
+
+--------------------------------
+
+23) What is method hiding?
+When static method in child class has same signature as parent class static method.
+
+--------------------------------
+
+24) Can we override private methods?
+No, private methods are not visible to child class.
+
+--------------------------------
+
+25) What is runtime binding?
+Method call resolution happens at runtime (dynamic dispatch).
+
+--------------------------------
+
+26) What is upcasting and downcasting?
+Upcasting: Parent ref = Child object  
+Downcasting: Child ref = (Child) Parent ref
+
+--------------------------------
+
+27) Why object creation is costly?
+Memory allocation + constructor execution + reference creation + initialization
+
+--------------------------------
+
+28) What is tight coupling?
+Strong dependency between classes.
+Change in one affects another.
+
+--------------------------------
+
+29) What is loose coupling?
+Minimal dependency.
+Independent modification possible.
+
+--------------------------------
+
+30) How OOPS helps in scalability?
+- Modular structure
+- Reusable components
+- Flexible architecture
+- Easy expansion
+- Maintainable codebase
+
+===============================
+DOUBTS / FUTURE STUDY
+===============================
+
+- SOLID principles
+- Design patterns
+- Dependency injection frameworks
+- Microservices architecture
+- Object lifecycle management
+- Memory references
+- JVM object allocationDate: Day 1
+Topic: Java Runtime Architecture & Execution Model
+
+INTERVIEW QUESTIONS + LEARNING
+
+1) Difference between JDK, JRE, JVM?
+JDK = development kit (compiler + tools + JRE)
+JRE = runtime environment (libraries + JVM)
+JVM = virtual machine that executes bytecode
+
+2) How Java code executes internally?
+.java → javac → .class (bytecode) → ClassLoader → JVM → Interpreter/JIT → Machine code
+
+3) What is bytecode and why is it important?
+Bytecode is platform-independent intermediate code that runs on JVM.
+
+4) What is ClassLoader?
+Loads .class files into memory dynamically.
+Types: Bootstrap, Extension, Application
+
+5) JVM Memory Areas:
+- Heap → objects
+- Stack → method calls, local variables
+- Method Area → class metadata, static variables
+- PC Register
+- Native Method Stack
+
+6) Difference between Stack and Heap?
+Stack → thread-based, fast, local  
+Heap → shared, slower, objects
+
+7) What is Garbage Collection?
+Automatic memory cleanup of unused objects from heap.
+
+8) What is JIT Compiler?
+Converts bytecode to native machine code for faster execution.
+
+9) Why Java is platform independent?
+Because bytecode runs on JVM, not directly on OS.
+
+10) Java execution flow:
+Class loading → Memory allocation → main() call → Execution → GC → Program termination
+
+DOUBTS:
+- JVM vs OS
+- JIT vs Interpreter
